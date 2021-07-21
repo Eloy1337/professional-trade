@@ -30,8 +30,10 @@ function Header() {
 		<header className="header">
 			<div className="container">
 				<section className="headerLeft">
-					<img src="logo.svg" alt="logo" width={90} />
-					<span>Professional<br />Trade</span>
+					<a href="#">
+						<img src="logo.svg" alt="logo" width={90} />
+						<span>Professional<br />Trade</span>
+					</a>
 				</section>
 				<section className="headerRight">
 					<ul>

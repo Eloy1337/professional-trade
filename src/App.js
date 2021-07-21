@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Paper from "./components/Paper";
 import Webinar from "./components/Webinar";
 
-const features = [
+const about = [
   {
     title: "Кто мы",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
@@ -43,7 +43,7 @@ function App() {
           <div className="container">
             <h3 className="titleSection">О нас</h3>
             <div className="body">
-              {features.map(obj => {
+              {about.map(obj => {
                 return (
                   <section className="item">
                     <h3>{obj.title}</h3>
