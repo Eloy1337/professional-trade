@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Paper from "./components/Paper";
-import Webinar from "./components/Webinar";
+// import Webinar from "./components/Webinar";
+import MultipleSlider from "./components/MultipleSlider";
 
 const about = [
   {
@@ -38,7 +39,6 @@ function App() {
             </section>
           </div>
         </section>
-
         <section className="about" name="about">
           <div className="container">
             <h3 className="titleSection">О нас</h3>
@@ -54,7 +54,6 @@ function App() {
             </div>
           </div>
         </section>
-
         <section className="articles" name="articles">
           <h3 className="titleSection">Статьи</h3>
           <Paper />
@@ -62,9 +61,10 @@ function App() {
         <section className="webinars" name="webinars">
           <h3 className="titleSection">Вебинары</h3>
           <div className="container">
+            {/* <Webinar />
             <Webinar />
-            <Webinar />
-            <Webinar />
+            <Webinar /> */}
+            <MultipleSlider />
           </div>
         </section>
       </main>
