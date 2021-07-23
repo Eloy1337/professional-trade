@@ -10,17 +10,23 @@ const arr = [
 		text: "Статьи"
 	},
 	{
-		href: "#",
+		href: "#webinars",
 		text: "Вебинары"
 	},
 	{
-		href: "#",
+		href: "",
 		text: "Видеокурсы"
 	},
 ]
 
 function Header() {
 	const [isBurgerActive, changeBurgerActive] = useState(false);
+
+	const scroll = (href) => {
+		if (href !== "") {
+			document.querySelector(href).scrollIntoView({ behavior: "smooth" });
+		}
+	}
 
 	const onClickBurger = () => {
 		changeBurgerActive(!isBurgerActive);
@@ -30,15 +36,15 @@ function Header() {
 		<header className="header">
 			<div className="container">
 				<section className="headerLeft">
-					<a href="#">
-						<img src="logo.svg" alt="logo" width={90} />
+					<a href="#top">
+						<img src="logo.svg" alt="logo" width={80} />
 						<span>Professional<br />Trade</span>
 					</a>
 				</section>
 				<section className="headerRight">
 					<ul>
 						{arr.map(obj => {
-							return <li><a href={obj.href}>{obj.text}</a></li>
+							return <li key={obj.href} onClick={() => scroll(obj.href)}>{obj.text}</li>
 						})}
 					</ul>
 				</section>
@@ -52,7 +58,7 @@ function Header() {
 				<section className="burgerMenu">
 					<ul>
 						{arr.map(obj => {
-							return <li><a href={obj.href}>{obj.text}</a></li>
+							return <li key={obj.href} onClick={() => { scroll(obj.href); onClickBurger() }}>{obj.text}</li>
 						})}
 					</ul>
 				</section>

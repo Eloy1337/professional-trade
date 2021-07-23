@@ -39,13 +39,13 @@ function App() {
             </section>
           </div>
         </section>
-        <section className="about" name="about">
+        <section className="about" id="about">
           <div className="container">
             <h3 className="titleSection">О нас</h3>
             <div className="body">
               {about.map(obj => {
                 return (
-                  <section className="item">
+                  <section key={obj.title} className="item">
                     <h3>{obj.title}</h3>
                     <span>{obj.text}</span>
                   </section>
@@ -54,16 +54,13 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="articles" name="articles">
+        <section className="articles" id="articles">
           <h3 className="titleSection">Статьи</h3>
           <Paper />
         </section>
-        <section className="webinars" name="webinars">
+        <section className="webinars" id="webinars">
           <h3 className="titleSection">Вебинары</h3>
           <div className="container">
-            {/* <Webinar />
-            <Webinar />
-            <Webinar /> */}
             <MultipleSlider />
           </div>
         </section>

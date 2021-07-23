@@ -74,6 +74,7 @@ a {
 					box-sizing: border-box;
 					border: 2px solid transparent;
 					transition: ease-in-out 0.2s;
+					cursor: pointer;
 
 					&:hover {
 						border-bottom: 2px solid #056CF2;
@@ -151,6 +152,10 @@ a {
 .main {
 	font-family: 'Roboto', sans-serif;
 	margin-top: 100px;
+
+	&>section:not(:first-child) {
+		padding-top: 50px;
+	}
 
 	.news {
 		// background-repeat: no-repeat;
