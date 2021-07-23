@@ -11,11 +11,11 @@ const arr = [
 	},
 	{
 		href: "#webinars",
-		text: "Вебинары"
+		text: "Видеокурсы"
 	},
 	{
-		href: "",
-		text: "Видеокурсы"
+		href: "#partners",
+		text: "Партнеры"
 	},
 ]
 

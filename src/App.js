@@ -1,23 +1,27 @@
 import Header from "./components/Header";
 import Paper from "./components/Paper";
-// import Webinar from "./components/Webinar";
 import MultipleSlider from "./components/MultipleSlider";
+import PartnerSlider from "./components/PartnerSlider";
 
 const about = [
   {
     title: "Кто мы",
+    src: "icons/about1.svg",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   },
   {
     title: "Нам доверяют",
+    src: "icons/about2.svg",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   },
   {
     title: "Что мы делаем ",
+    src: "icons/about3.svg",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   },
   {
     title: "Зачем вам это нужно",
+    src: "icons/about4.svg",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   },
 ]
@@ -46,7 +50,7 @@ function App() {
               {about.map(obj => {
                 return (
                   <section key={obj.title} className="item">
-                    <h3>{obj.title}</h3>
+                    <h3 style={{ backgroundImage: `url('${obj.src}')` }}>{obj.title}</h3>
                     <span>{obj.text}</span>
                   </section>
                 )
@@ -59,9 +63,15 @@ function App() {
           <Paper />
         </section>
         <section className="webinars" id="webinars">
-          <h3 className="titleSection">Вебинары</h3>
+          <h3 className="titleSection">Видеокурсы</h3>
           <div className="container">
             <MultipleSlider />
+          </div>
+        </section>
+        <section className="partners" id="partners">
+          <h3 className="titleSection">Партнеры</h3>
+          <div className="container">
+            <PartnerSlider />
           </div>
         </section>
       </main>

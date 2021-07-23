@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import Partner from "./Partner";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Webinar from "./Webinar";
 
-export default class MultipleSlider extends Component {
+const arr = ["partners/partner1.svg", "partners/partner2.png", "partners/partner3.jpg"];
+
+export default class PartnerSlider extends Component {
 	render() {
 		const settings = {
 			dots: true,
@@ -12,7 +14,7 @@ export default class MultipleSlider extends Component {
 			speed: 500,
 			slidesToShow: 3,
 			slidesToScroll: 3,
-			autoplay: true,
+			autoplay: false,
 			responsive: [
 				{
 					breakpoint: 1024,
@@ -35,10 +37,9 @@ export default class MultipleSlider extends Component {
 		return (
 			<div>
 				<Slider {...settings}>
-					<Webinar />
-					<Webinar />
-					<Webinar />
-					<Webinar />
+					{arr.map((item) => {
+						return (<Partner url={item} />);
+					})}
 				</Slider>
 			</div>
 		);

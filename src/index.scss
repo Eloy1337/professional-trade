@@ -252,6 +252,14 @@ a {
 						font-size: 22px;
 						line-height: 26px;
 						margin: 22px 0;
+						background-repeat: no-repeat;
+						background-position: left;
+						background-size: contain;
+						padding: 0 35px;
+
+						@media (max-width: 350px) {
+							background-size: 25px;
+						}
 					}
 	
 					span {
@@ -275,10 +283,39 @@ a {
 		padding: 20px 0;
 
 		.container {
+			display: block;
 			// display: flex;
 			// justify-content: center;
 			// align-items: center;
 			// flex-wrap: wrap;
+		}
+	}
+
+	.partners {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 40px 0;
+
+		.container {
+			// display: flex;
+			// flex-direction: column;
+			// align-items: center;
+
+			.partner {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				max-width: 100%;
+				min-height: 200px;
+				margin: 0 80px;
+
+
+				img {
+					width: 100%;
+				}
+			}
 		}
 	}
 }
