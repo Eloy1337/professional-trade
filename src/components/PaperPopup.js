@@ -17,7 +17,7 @@ function PaperPopup({ name, text, onLoad, onClose }) {
 					<button onClick={onClose}>✕</button>
 				</section>
 				<section className="text">
-					<p>{text}</p>
+					<pre>{text}</pre>
 				</section>
 			</div>
 		</section>
