@@ -322,12 +322,13 @@ a {
 
 .paperPopup {
 	width: 100%;
-    min-height: 1000%;
+    min-height: 100vh;
     position: absolute;
     z-index: 15;
     background-color: white;
     top: 0;
     left: 0;
+	overflow: hidden;
 
 	.title {
 		display: flex;
@@ -347,8 +348,9 @@ a {
 			display: block;
 			background-color: transparent;
 			font-size: 30px;
-			border: 2px solid black;
-			border-radius: 50%;
+			// border: 2px solid black;
+			// border-radius: 50%;
+			border: none;
 			width: 45px;
 			cursor: pointer;
 		}

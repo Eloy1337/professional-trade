@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import Paper from "./Paper";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PaperPopup from "./PaperPopup";
 
 export default class PartnerSlider extends Component {
 	render() {
@@ -36,11 +34,10 @@ export default class PartnerSlider extends Component {
 		return (
 			<div>
 				<Slider {...settings}>
-					<Paper />
-					<Paper />
-					<Paper />
+					{this.props.value.map((item) => {
+						return (item);
+					})}
 				</Slider>
-				{/* <PaperPopup /> */}
 			</div>
 		);
 	}

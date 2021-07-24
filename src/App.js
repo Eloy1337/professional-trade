@@ -2,6 +2,9 @@ import Header from "./components/Header";
 import WebinarSlider from "./components/WebinarSlider";
 import PartnerSlider from "./components/PartnerSlider";
 import PaperSlider from "./components/PaperSlider";
+import PaperPopup from "./components/PaperPopup";
+import Paper from "./components/Paper";
+import React, { useState } from "react";
 
 const about = [
   {
@@ -26,9 +29,32 @@ const about = [
   },
 ]
 
+const papers = [
+  {
+    key: 1,
+    name: "mauris vitae ultricies leo integer",
+    img: "img/webinar.png",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    time: "1 сентября, 09:00",
+    author: "Екатерина Саблева"
+  },
+  {
+    key: 2,
+    name: "5342534523453245",
+    img: "img/webinar.png",
+    text: "5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 5342534523453245 ",
+    time: "1 сентября, 09:00",
+    author: "Анатолий Кузнецов"
+  }
+]
+
+
 function App() {
+  const [paperIndex, changePaperIndex] = useState(0);
+  const [paperPopupHeight, setPaperPopupHeight] = useState("auto");
+
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ maxHeight: `${paperPopupHeight}` }}>
       <Header />
       <main className="main">
         <section className="news">
@@ -61,7 +87,9 @@ function App() {
         <section className="articles" id="articles">
           <h3 className="titleSection">Статьи</h3>
           <div className="container">
-            <PaperSlider />
+            <PaperSlider value={[papers.map((obj) => {
+              return (<Paper onClickPaper={() => changePaperIndex(obj.key)} name={obj.name} img={obj.img} text={obj.text} time={obj.time} author={obj.author} />)
+            })]} />
           </div>
         </section>
         <section className="webinars" id="webinars">
@@ -77,7 +105,7 @@ function App() {
           </div>
         </section>
       </main>
-
+      {paperIndex && <PaperPopup name={papers[paperIndex - 1].name} text={papers[paperIndex - 1].text} onClose={() => { setPaperPopupHeight("100%"); changePaperIndex(0) }} onLoad={setPaperPopupHeight} />}
     </div >
   );
 }
