@@ -1,13 +1,12 @@
 import styles from "./Webinar.module.scss";
 
-function Webinar(props) {
+function Webinar({ name, img, text, time, author, onClickWebinar }) {
 	return (
-		<article className={styles.article}>
-			<img src="img/webinar.png" alt="webinar-img" />
-			<h3>mauris vitae ultricies leo integer</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In ornare quam viverra orci sagittis. Nisl condimentum id venenatis a condimentum.
-			</p>
-			<span style={{ backgroundImage: "url('icons/user.svg')" }}>Александра Александрова</span>
+		<article onClick={onClickWebinar} className={styles.article}>
+			<img src={img} alt="webinar-img" />
+			<h3>{name}</h3>
+			<span style={{ backgroundImage: "url('icons/user.svg')" }}>{author}</span>
+			<p>{text}</p>
 		</article>
 	)
 }
