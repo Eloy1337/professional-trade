@@ -12,22 +12,22 @@ const about = [
   {
     title: "Кто мы",
     src: "icons/about1.svg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    text: "Школа финансовой грамотности в современном цифровом мире «Professional  trade» — это информационно-просветительский проект в финансовой области реализуемый при поддержке Федерального агентства по делам молодежи. Мы рассказываем про финансовые инструменты, как их использовать и как на них зарабатывать. Для этого мы приглашаем лучших экспертов финансового рынка."
   },
   {
     title: "Нам доверяют",
     src: "icons/about2.svg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    text: "Школа финансовой грамотности в современном цифровом мире «Professional  trade» - это проект который выиграл Всероссийский конкурс молодежных проектов в 2020 году и реализовывается при грантовой поддержке Федерального агентства по делам молодежи."
   },
   {
     title: "Что мы делаем ",
     src: "icons/about3.svg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    text: "Мы делаем короткие практические вебинары по инвестированию, трейдингу и финансовым инструментам различных бирж. Всего будет организовано 48 часов образовательного блока, в рамках которого пройдут обучения более 90 человек. Информацию, которую вы получаете на вебинарах, можно сразу использовать на практике."
   },
   {
     title: "Зачем вам это нужно",
     src: "icons/about4.svg",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    text: "После курсов вы обретете финансовую свободу и независимость. Вы будете чувствовать себя уверенно при покупке акций, облигаций, валюты или фьючерсов. Сможете сами формировать свой финансовый портфель и учитывать различные риски."
   },
 ]
 
@@ -1068,7 +1068,7 @@ const papers = [
 const webinars = [
   {
     key: 1,
-    name: "Справедливая доходность облигации | Инвестиции. Алгоритм расчета",
+    name: "Справедливая доходность облигации",
     img: "img/webinar1.png",
     text: `Кто-то умный однажды сказал: «В мире нет справедливости!», и возможно, был прав. Но лишь частично. В мире финансов справедливость как раз есть. «Справедливой» считается та цена, которая отражает весь будущий доход или всю будущую полезность, которую вы получите, купив актив на финансовом рынке. Но как определить, какая доходность по облигации является справедливой или рыночной? Для этого нужно немножечко пошаманить с калькулятором, и сегодня мы вам расскажем, как именно это сделать. Приятного просмотра!`,
     author: "Yango",
@@ -1121,12 +1121,12 @@ function App() {
         <section className="news">
           <div className="container" style={{ backgroundImage: "url('img/news-img.png')" }}>
             <section className="body">
-              <h3>Запишитесь на новый вебинар</h3>
-              <h2>“Блаблабла”</h2>
+              <h3>Посмотрите новый видеокурс</h3>
+              <h2>“{webinars[0].name}”</h2>
               <span className="time" style={{
-                backgroundImage: "url('icons/timer.svg')"
-              }}>Начало 23 июля, 22:00</span>
-              <button>Открыть</button>
+                backgroundImage: "url('icons/user.svg')"
+              }}>{webinars[0].author}</span>
+              <button onClick={() => changeWebinarIndex(webinars[0].key)}>Открыть</button>
             </section>
           </div>
         </section>
